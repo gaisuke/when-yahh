@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "600km, closing in",
+  title: "when yahh ?",
   description: "Counting down to July 4.",
 };
 

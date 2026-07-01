@@ -137,7 +137,7 @@ export default function Home() {
 
   return (
     <main className="wrap">
-      <p className="eyebrow">600km apart · closing in</p>
+      <p className="eyebrow">{distanceKm !== null ? `${distanceKm.toFixed(1)} km` : "— km"} apart · closing in</p>
       <h1 className="headline">
         {countdown.days > 0 ? (
           <>
