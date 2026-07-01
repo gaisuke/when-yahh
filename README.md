@@ -1,4 +1,4 @@
-# reunion-tracker
+# when-yahh
 
 Countdown + live map for two people closing the distance. Built with Next.js
 (App Router) and Leaflet.

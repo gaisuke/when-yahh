@@ -29,7 +29,7 @@ export default function MapView({ me, wife }) {
       attributionControl: false,
     }).setView([-2.5, 118], 4.5); // default: centered on Indonesia
 
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
       maxZoom: 19,
     }).addTo(map);
 
@@ -54,14 +54,14 @@ export default function MapView({ me, wife }) {
 
     if (me) {
       layers.me = L.marker([me.lat, me.lng], { icon: dotIcon("#4ECDC4") })
-        .bindTooltip("Me", { permanent: false, direction: "top" })
+        .bindTooltip("Dani", { permanent: false, direction: "top" })
         .addTo(map);
       points.push([me.lat, me.lng]);
     }
 
     if (wife) {
       layers.wife = L.marker([wife.lat, wife.lng], { icon: dotIcon("#FF6B6B") })
-        .bindTooltip("Wife", { permanent: false, direction: "top" })
+        .bindTooltip("Pipit", { permanent: false, direction: "top" })
         .addTo(map);
       points.push([wife.lat, wife.lng]);
     }

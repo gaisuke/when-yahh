@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const MapView = dynamic(() => import("./MapView"), { ssr: false });
 
 // Adjust this to whenever/wherever you're actually meeting.
-const TARGET_DATE = new Date("2026-07-04T00:00:00+07:00");
+const TARGET_DATE = new Date("2026-07-04T05:00:00+07:00");
 
 function getCountdown() {
   const diff = Math.max(0, TARGET_DATE.getTime() - Date.now());
@@ -82,10 +82,10 @@ function ShareButton({ person, label, color, current, onShared }) {
     status === "loading"
       ? "getting location…"
       : status === "error"
-      ? "couldn't get location — try again"
-      : current
-      ? `last shared ${new Date(current.updatedAt).toLocaleTimeString()}`
-      : "not shared yet";
+        ? "couldn't get location — try again"
+        : current
+          ? `last shared ${new Date(current.updatedAt).toLocaleTimeString()}`
+          : "not shared yet";
 
   return (
     <button
@@ -96,7 +96,7 @@ function ShareButton({ person, label, color, current, onShared }) {
     >
       <span className="dot" />
       <span className="share-btn-meta">
-        <span className="share-btn-name">Share {label}'s location</span>
+        <span className="share-btn-name">Share {label} location</span>
         <span className="share-btn-status">{statusText}</span>
       </span>
     </button>
@@ -141,11 +141,11 @@ export default function Home() {
       <h1 className="headline">
         {countdown.days > 0 ? (
           <>
-            <strong>{countdown.days}</strong> day{countdown.days === 1 ? "" : "s"} until we're
+            Dani & Pipit -- <strong>{countdown.days}</strong> day{countdown.days === 1 ? "" : "s"} until we're
             back in the same room.
           </>
         ) : (
-          <>Today's the day. See you at the bus stop.</>
+          <>Today's the day. See you at the house.</>
         )}
       </h1>
 
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="share-row">
           <ShareButton
             person="me"
-            label="my"
+            label="Dani's"
             color="#4ECDC4"
             current={locations.me}
             onShared={(data) =>
@@ -182,7 +182,7 @@ export default function Home() {
           />
           <ShareButton
             person="wife"
-            label="her"
+            label="Pipit's"
             color="#FF6B6B"
             current={locations.wife}
             onShared={(data) =>
@@ -203,12 +203,14 @@ export default function Home() {
         </div>
       </div>
 
+      {/* No need footnote
       <p className="footnote">
         Open this page on both phones and tap "share." It polls every 8 seconds,
         so the map updates on its own — no refresh needed. The bus ride is
         roughly <strong>7 hours</strong>; this page doesn't know that yet, but
         the distance readout above is doing the same math your driver is.
       </p>
+      */}
     </main>
   );
 }

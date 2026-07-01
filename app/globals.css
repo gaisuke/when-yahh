@@ -1,14 +1,14 @@
 @import "leaflet/dist/leaflet.css";
 
 :root {
-  --bg: #1b1f3b;
-  --bg-deep: #12152b;
-  --cream: #f5efe6;
-  --amber: #ff8a5b;
-  --teal: #4ecdc4;
-  --coral: #ff6b6b;
-  --hairline: rgba(245, 239, 230, 0.14);
-  --muted: #9b9ab0;
+  --bg: #fff8f3;
+  --bg-deep: #ffffff;
+  --cream: #4a2545;
+  --amber: #ff6f91;
+  --teal: #6fb1fc;
+  --coral: #ff8fa3;
+  --hairline: rgba(74, 37, 69, 0.12);
+  --muted: #a98ca0;
 
   --font-display: "Fraunces", serif;
   --font-body: "Inter", sans-serif;
@@ -30,8 +30,8 @@ body {
 
 body {
   background:
-    radial-gradient(circle at 15% 0%, rgba(255, 138, 91, 0.08), transparent 45%),
-    radial-gradient(circle at 85% 100%, rgba(78, 205, 196, 0.06), transparent 45%),
+    radial-gradient(circle at 15% 0%, rgba(255, 111, 145, 0.10), transparent 45%),
+    radial-gradient(circle at 85% 100%, rgba(111, 177, 252, 0.08), transparent 45%),
     var(--bg);
   min-height: 100vh;
 }
