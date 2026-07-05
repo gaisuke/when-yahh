@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const MapView = dynamic(() => import("./MapView"), { ssr: false });
 
 // Adjust this to whenever/wherever you're actually meeting.
-const TARGET_DATE = new Date("2026-07-04T05:00:00+07:00");
+const TARGET_DATE = new Date("2026-07-18T05:00:00+07:00");
 
 function getCountdown() {
   const diff = Math.max(0, TARGET_DATE.getTime() - Date.now());
